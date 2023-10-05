@@ -78,7 +78,7 @@ e_map = {
 
 
 def from_smiles(smiles: str, with_hydrogen: bool = False,
-                kekulize: bool = False) -> 'torch_geometric.data.Data':
+                kekulize: bool = False, y) -> 'torch_geometric.data.Data':
     r"""Converts a SMILES string to a :class:`torch_geometric.data.Data`
     instance.
 
@@ -142,7 +142,7 @@ def from_smiles(smiles: str, with_hydrogen: bool = False,
         perm = (edge_index[0] * x.size(0) + edge_index[1]).argsort()
         edge_index, edge_attr = edge_index[:, perm], edge_attr[perm]
 
-    return Data(x=x, edge_index=edge_index, edge_attr=edge_attr, smiles=smiles)
+    return Data(x=x, edge_index=edge_index, edge_attr=edge_attr, smiles=smiles, y=y)
 
 
 def to_smiles(data: 'torch_geometric.data.Data',
