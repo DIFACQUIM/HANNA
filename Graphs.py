@@ -78,7 +78,7 @@ e_map = {
 
 
 def from_smiles(smiles: str, with_hydrogen: bool = False,
-                kekulize: bool = False, y) -> 'torch_geometric.data.Data':
+                kekulize: bool = False, y: float) -> 'torch_geometric.data.Data':
     r"""Converts a SMILES string to a :class:`torch_geometric.data.Data`
     instance.
 
