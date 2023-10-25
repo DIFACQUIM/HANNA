@@ -121,8 +121,8 @@ def from_smiles(y_val,
         x.append(x_map['is_in_ring'].index(atom.IsInRing()))  # 9
         xs.append(x)
 
-    #x = torch.tensor(xs, dtype=torch.long).view(-1, 9)
-    x = torch.tensor(xs, dtype=torch.float32).view(-1,9)
+    x = torch.tensor(xs, dtype=torch.long).view(-1, 9)
+    #x = torch.tensor(xs, dtype=torch.float32).view(-1,9)
                     
     #print(x)
     edge_indices, edge_attrs = [], []
@@ -140,8 +140,8 @@ def from_smiles(y_val,
 
     edge_index = torch.tensor(edge_indices)
     edge_index = edge_index.t().to(torch.long).view(2, -1)
-    #edge_attr = torch.tensor(edge_attrs, dtype=torch.long).view(-1, 3)
-    edge_attr = torch.tensor(edge_attrs, dtype=torch.float32).view(-1,3)
+    edge_attr = torch.tensor(edge_attrs, dtype=torch.long).view(-1, 3)
+    #edge_attr = torch.tensor(edge_attrs, dtype=torch.float32).view(-1,3)
 
     if edge_index.numel() > 0:  # Sort indices.
         perm = (edge_index[0] * x.size(0) + edge_index[1]).argsort()
