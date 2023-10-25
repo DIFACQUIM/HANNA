@@ -8,7 +8,7 @@ import numpy as np
 
 x_map = {
     'atomic_num':
-    list(range(0., 119.)),
+    list(range(0, 119)),
     'chirality': [
         'CHI_UNSPECIFIED',
         'CHI_TETRAHEDRAL_CW',
