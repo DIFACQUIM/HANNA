@@ -20,7 +20,7 @@ x_map = {
     ],
     'degree':
     list(range(0, 11)),
-    'formal_charge':
+    #'formal_charge':
     #list(range(-5, 7)),
     'num_hs':
     list(range(0, 9)),
