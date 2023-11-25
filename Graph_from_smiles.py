@@ -21,7 +21,7 @@ x_map = {
     'degree':
     list(range(0, 11)),
     'formal_charge':
-    list(range(-5, 7)),
+    list(range(-2, 2)),
     'num_hs':
     list(range(0, 9)),
     'num_radical_electrons':
